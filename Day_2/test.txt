@@ -1,2 +1,2 @@
 echo "Hello DevOps" 
-echo "This is Day_02"
+echo "This is Day_02"  
