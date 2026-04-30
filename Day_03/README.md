@@ -1,1 +1,1 @@
-"docs: updated setup instructions".
+"docs: updated setup instructions ".
