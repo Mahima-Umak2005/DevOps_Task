@@ -11,4 +11,4 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Run Setup Script
-        run: bash Day_04/setup_server.sh
+        run: bash Day_04/setup-server.sh
