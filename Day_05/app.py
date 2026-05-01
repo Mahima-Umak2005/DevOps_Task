@@ -1,0 +1,2 @@
+print("Hello from inside the Container! DevOps Day 5 is a success")
+
