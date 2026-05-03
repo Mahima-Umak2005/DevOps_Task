@@ -1,0 +1,31 @@
+# Stage 1: Builder
+FROM python:3.9-slim AS builder
+
+WORKDIR /build
+
+COPY requirements.txt .
+
+RUN pip install --user -r requirements.txt
+
+# Stage 2: Final Image
+FROM python:3.9-slim
+
+# Create user again (important!)
+RUN useradd -m myuser
+
+WORKDIR /app
+
+# Copy installed packages
+COPY --from=builder /root/.local /home/myuser/.local
+
+# Copy app files
+COPY . .
+
+# Set path
+ENV PATH=/home/myuser/.local/bin:$PATH
+
+# Switch user
+USER myuser
+
+# Run app
+CMD ["python", "app.py"]
